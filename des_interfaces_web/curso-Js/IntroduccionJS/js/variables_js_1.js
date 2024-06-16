@@ -16,3 +16,4 @@ console.log(num_1);
 const producto_2 = "carne de pollo"; //crear una variable y asignarle un valor
 
 console.log(producto_2);
+
