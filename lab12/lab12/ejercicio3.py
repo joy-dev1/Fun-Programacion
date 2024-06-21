@@ -5,7 +5,7 @@ def Agregar():
     longi2=len(ListaDatos)
     longi=list(map(len,ListaDatos))
     print(f"\tMENU")
-    print("1. Ver la longitud de datos")
+    print("1. Ver la longitud de datos",end="|")
     print("2. Ver la longitud de caracteres")
     opcion=int(input("Elige: "))
     if opcion ==1:
