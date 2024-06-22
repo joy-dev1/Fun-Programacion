@@ -1,0 +1,8 @@
+from funOperaciones import *
+
+
+Pregunta()
+
+
+
+
