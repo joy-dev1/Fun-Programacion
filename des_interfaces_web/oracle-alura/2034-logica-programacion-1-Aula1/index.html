@@ -9,19 +9,33 @@
       href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@700&family=Inter:wght@400;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="style.css" />
+    //<link rel="stylesheet" href="style.css" />
     <title>JS Game</title>
     <script>
       function JuegoNumSecreto() {
         //variables
         let numeroSecreto = 6;
-        let numeroUsuario = prompt("Me indicas un numero por favor:");
-        console.log(numeroUsuario);
-        // Este codigo compara el numero dado por el usuario con el numero secreto
-        if (numeroUsuario == numeroSecreto) {
-          alert(`Acertaste, el numero es ${numeroUsuario} `);
-        } else {
-          alert("El numero que pusiste es incorrecto");
+        let numeroUsuario = 0;
+        let intentos = 1;
+        let PalabraVeces = "vez";
+        while (numeroUsuario != numeroSecreto) {
+          let numeroUsuario = prompt("Me indicas un numero por favor:");
+          console.log(numeroUsuario);
+          // Este codigo compara el numero dado por el usuario con el numero secreto
+          if (numeroUsuario == numeroSecreto) {
+            alert(
+              `Acertaste, el numero es ${numeroUsuario} y lo hiciste en ${intentos} ${PalabraVeces}`
+            );
+          } else {
+            if (numeroUsuario > numeroSecreto) {
+              alert("El numero secreto es menor ");
+            } else {
+              alert("El numero secreto es mayor");
+            }
+            intentos += 1;
+            PalabraVeces = "veces";
+            //alert("El numero que pusiste es incorrecto");
+          }
         }
       }
       /*Pregunta al usuario qué día de la semana es. Si la respuesta es "Sábado" o "Domingo", muestra "¡Buen fin de semana!". De lo contrario, muestra "¡Buena semana!".
@@ -35,7 +49,7 @@
         }
       }
       /*
-Verifica si un número ingresado por el usuario es positivo o negativo. Muestra una alerta informativa.
+      Verifica si un número ingresado por el usuario es positivo o negativo. Muestra una alerta informativa.
 */
       function NumeroPN() {
         let Numero = prompt(
@@ -73,6 +87,46 @@ Pide al usuario que ingrese su nombre mediante un prompt. Luego, muestra una ale
         let nombre = prompt("Ponga su nombre");
         alert(`Bienvenido ${nombre} espero la estes pasando bien`);
       }
+      function PracticaWhi() {
+        let qtdNumeros = prompt(
+          "Digite la cantidad de números para el cálculo del promedio:"
+        );
+        let soma = 0;
+        let contador = qtdNumeros;
+
+        while (contador > 0) {
+          let numero = parseInt(prompt("Digite el numero:"));
+          soma += numero;
+          contador--;
+        }
+        let promedio = soma / qtdNumeros;
+        console.log(promedio);
+      }
+      function MuestraNum() {
+        let contador = 10;
+        let numero = 1;
+        while (contador > 0) {
+          alert(`Contando hasta 10 vas en ${contador}`);
+          contador--;
+          if (contador == 0) {
+            break;
+          }
+        }
+      }
+      /*
+      Crea un programa de cuenta progresiva. Pide un número y cuenta desde 0 hasta ese número utilizando un bucle 'while' en la consola del navegador.
+      */
+      function CuentaRegresiva() {
+        let contador = 0;
+        let numero = 0;
+        numero = prompt("Ponga hasta que numero desea contar");
+        while (contador <= numero) {
+          
+          console.log(`Progresivamente se contara desde ${contador}, hasta ${numero}`);
+          contador++;
+          
+        }
+      }
     </script>
   </head>
 
@@ -89,7 +143,7 @@ Pide al usuario que ingrese su nombre mediante un prompt. Luego, muestra una ale
           <div class="container__texto">
             <h1><span class="container__texto-azul">Correcto!</span></h1>
             <h2>Descubriste el número secreto!</h2>
-            <button onclick="Nombre()">Enviar</button>
+            <button onclick="CuentaRegresiva()">Enviar</button>
           </div>
         </div>
       </div>
